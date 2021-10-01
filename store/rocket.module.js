@@ -1,1 +1,0 @@
-// rocket details state module

@@ -1,11 +1,10 @@
 // main state
-import Vuex from "vuex";
 
-const store = new Vuex.Store({
-  state: {
-    loading: false
-  },
-  mutations: {
-    setLoadingStatus: (state, status) => (state.loading = status)
-  }
+export const state = () => ({
+  loading: false,
+  appName: "SpaceX"
 });
+
+export const mutations = {
+  setLoadingStatus: (state, status) => (state.loading = status)
+};
