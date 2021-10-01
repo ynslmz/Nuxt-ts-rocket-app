@@ -16,7 +16,7 @@
 export default {
   computed: {
     rocketList() {
-      return this.$store.state.home.rocketList;
+      return this.$store.getters["home/getRocketList"];
     },
   },
   mounted() {

@@ -12,7 +12,9 @@
         :alt="rocketInfo.rocket.rocket_name"
       />
     </div>
-    <div>{{ rocketInfo.launch_date_unix }}</div>
+    <div>
+      {{ new Date(rocketInfo.launch_date_unix * 1000).toLocaleString("en-US") }}
+    </div>
   </NuxtLink>
 </template>
 
