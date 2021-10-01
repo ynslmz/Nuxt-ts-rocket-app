@@ -1,9 +1,12 @@
 <template>
   <div>
     <h4>Rocket List</h4>
-    <div class="item" v-for="rocket in rocketList" :key="rocket.flight_number">
-      <home-rocket-list-item :rocket-info="rocket" />
-    </div>
+
+    <home-rocket-list-item
+      v-for="rocket in rocketList"
+      :key="rocket.flight_number"
+      :rocket-info="rocket"
+    />
   </div>
 </template>
 
@@ -18,8 +21,4 @@ export default {
 </script>
 
 <style>
-.item {
-  margin: 0.5rem 0;
-  border-bottom: 1px solid #999;
-}
 </style>
