@@ -1,10 +1,15 @@
 <template>
-  <rocket-info />
+  <div>
+    Rocket Detail
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
+
 </style>

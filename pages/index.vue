@@ -1,7 +1,10 @@
 <template>
-  <Tutorial/>
+  <rocket-list />
 </template>
 
 <script>
-export default {}
+import rocketList from "../components/home/rocket-list.vue";
+export default {
+  components: { rocketList },
+};
 </script>
