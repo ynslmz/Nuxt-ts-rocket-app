@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="header">
-      <h4>Rocket List</h4>
+    <div class="rocket-list-header">
+      <h3>Rocket List</h3>
       <home-rocket-list-order-select />
     </div>
     <home-rocket-list-item
@@ -26,9 +26,9 @@ export default {
 </script>
 
 <style>
-.header {
+.rocket-list-header {
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
 }
 </style>
