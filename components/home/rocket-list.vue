@@ -17,6 +17,9 @@ export default {
       return this.$store.state.home.rocketList;
     },
   },
+  mounted() {
+    this.$store.dispatch("home/getLatestRocketList");
+  },
 };
 </script>
 

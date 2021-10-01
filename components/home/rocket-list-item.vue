@@ -1,10 +1,10 @@
 <template>
   <NuxtLink
     class="item-container"
-    :to="'/rocket-details/' + rocketInfo.rocket.rocket_name"
+    :to="'/rocket-details/' + rocketInfo.rocket.rocket_id"
   >
-    <div>{{ rocketInfo.rocket.rocket_name }}</div>
     <div>{{ rocketInfo.mission_name }}</div>
+    <div>{{ rocketInfo.rocket.rocket_name }}</div>
     <div>
       <img
         height="48"
