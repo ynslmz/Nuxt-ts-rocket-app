@@ -6,5 +6,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setLoadingStatus: (state, status) => (state.loading = status)
+  setLoadingStatus(state, status) {
+    state.loading = status;
+  }
 };

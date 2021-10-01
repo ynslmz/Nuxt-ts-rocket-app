@@ -1,26 +1,12 @@
 <template>
   <div class="wrapper">
-    <header>
-      <h1>{{ appName }}</h1>
-    </header>
+    <app-header />
     <div class="main">
       <Nuxt />
     </div>
-    <footer>footer > loading: {{ loading }}</footer>
+    <app-footer />
   </div>
 </template>
-<script>
-export default {
-  computed: {
-    appName() {
-      return this.$store.state.appName;
-    },
-    loading() {
-      return this.$store.state.loading;
-    },
-  },
-};
-</script>
 
 <style>
 .wrapper {
