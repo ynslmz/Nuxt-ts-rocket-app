@@ -1,0 +1,42 @@
+<template>
+  <div class="sort-select-container">
+    <select
+      title="Sort By Flight Number"
+      class="sort-select"
+      v-model="key"
+      @change="onChange($event)"
+    >
+      <option value="asc">Asc</option>
+      <option value="desc">Desc</option>
+    </select>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      key: "",
+    };
+  },
+  fetch() {
+    this.key = this.$store.state.home.sortDirection;
+  },
+  methods: {
+    onChange(event) {
+      this.$store.dispatch("home/changeSort", event.target.value);
+    },
+  },
+};
+</script>
+<style>
+/* sort selector styles */
+.sort-select-container {
+  text-align: right;
+}
+.sort-select {
+  padding: 0.1rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+</style>

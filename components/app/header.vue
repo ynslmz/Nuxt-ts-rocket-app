@@ -73,3 +73,15 @@ export default {
   },
 };
 </script>
+<style >
+.header {
+  margin: 1rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.header .logo {
+  height: 2.5rem;
+  max-width: 95%;
+}
+</style>

@@ -1,17 +1,25 @@
 <template>
   <NuxtLink
-    class="item-container"
+    class="item-container link"
     :to="'/rocket-details/' + rocketInfo.rocket.rocket_id"
   >
-    <img
-      class="img-rocket"
-      :src="rocketInfo.links.mission_patch_small"
-      :alt="rocketInfo.rocket.rocket_name"
-    />
-    <div>{{ rocketInfo.mission_name }}</div>
-    <div>{{ rocketInfo.rocket.rocket_name }}</div>
-    <div>
-      {{ new Date(rocketInfo.launch_date_unix * 1000).toLocaleString("en-US") }}
+    <div class="img-container">
+      <img
+        v-if="!!rocketInfo.links.mission_patch"
+        class="img-rocket"
+        :src="rocketInfo.links.mission_patch_small"
+        :alt="rocketInfo.rocket.rocket_name"
+      />
+      <span v-if="!rocketInfo.links.mission_patch">No Patch</span>
+    </div>
+    <div class="descriptions">
+      <p>{{ rocketInfo.mission_name }}</p>
+      <p>{{ rocketInfo.rocket.rocket_name }}</p>
+      <p>
+        {{
+          new Date(rocketInfo.launch_date_unix * 1000).toLocaleString("en-US")
+        }}
+      </p>
     </div>
   </NuxtLink>
 </template>

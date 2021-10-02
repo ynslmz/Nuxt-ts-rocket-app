@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="main">
     <app-header />
-    <div class="main">
+    <div class="wrapper">
       <Nuxt />
     </div>
-    <app-footer />
+    <app-loading />
   </div>
 </template>

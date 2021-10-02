@@ -1,14 +1,21 @@
 <template>
-  <div v-if="!!rocketDetail">
-    <h4 class="rocket-detail-header">
-      {{ rocketDetail.company }} - {{ rocketDetail.rocket_name }}
-    </h4>
-    <div
-      class="img-container"
-      v-for="img in rocketDetail.flickr_images"
-      :key="img"
-    >
-      <img :src="img" class="img-thumb" />
+  <div v-if="!!rocketDetail" class="page-container">
+    <div class="page-container-header">
+      <h3 class="title">
+        {{ rocketDetail.company }} - {{ rocketDetail.rocket_name }}
+      </h3>
+      <div class="sort-select-container">
+        <NuxtLink class="link" to="/">Back</NuxtLink>
+      </div>
+    </div>
+    <div class="page-container-body">
+      <div
+        class="item-container"
+        v-for="img in rocketDetail.flickr_images"
+        :key="img"
+      >
+        <img :src="img" class="img-thumb" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,3 +34,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.img-thumb {
+  width: 100%;
+}
+
+</style>
