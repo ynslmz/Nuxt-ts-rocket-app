@@ -73,12 +73,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.header {
-  text-align: center;
-}
-.logo {
-  width: 250px;
-}
-</style>

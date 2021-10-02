@@ -10,9 +10,6 @@
     >
       <img :src="img" class="img-thumb" />
     </div>
-    <pre>
-    {{ rocketDetail }}
-    </pre>
   </div>
 </template>
 
@@ -30,35 +27,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.rocket-detail-header {
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-}
-.img-container {
-  padding: 0.5rem;
-  overflow: hidden;
-}
-.img-thumb {
-  width: 100%;
-  min-width: 100px;
-  max-width: 400px;
-}
-.img-fullscreen {
-  width: 100%;
-}
-.img-fullscreen::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-</style>
