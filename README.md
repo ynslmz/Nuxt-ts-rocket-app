@@ -1,6 +1,6 @@
-# spoxx-rocket-app
+# Rocket App
 
-[Demo](https://blissful-kare-ee4fdb.netlify.app/)
+You can visit [Demo](https://rocket-app-demo.netlify.app/) Rocket App!
 
 ## Build Setup
 
