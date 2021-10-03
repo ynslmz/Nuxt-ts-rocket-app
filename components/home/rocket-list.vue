@@ -15,14 +15,17 @@
 </template>
 
 <script>
+import { actions } from "../../store/home/actions";
+import { getters } from "../../store/home/getters";
+import { moduleName } from "../../store/home/state";
 export default {
   computed: {
     rocketList() {
-      return this.$store.getters["home/getRocketList"];
+      return this.$store.getters[moduleName + getters.getRocketList];
     },
   },
   mounted() {
-    this.$store.dispatch("home/getLatestRocketList");
+    this.$store.dispatch(moduleName + actions.fetchLatestLunchEvents);
   },
 };
 </script>

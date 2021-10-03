@@ -1,13 +1,19 @@
+export const getters = {
+  getRocketDetails: "getRocketDetails",
+  getRocketDetail: "getRocketDetail",
+  hasRocketDetail: "hasRocketDetail"
+};
+
 export default {
-  getRocketDetails: state => {
+  [getters.getRocketDetails]: state => {
     return state.rocketDetailsList;
   },
-  getRocketDetail: state => rocketId => {
+  [getters.getRocketDetail]: state => rocketId => {
     return state.rocketDetailsList.find(
       ({ rocket_id }) => rocket_id === rocketId
     );
   },
-  hasRocketDetail: state => rocketId => {
+  [getters.hasRocketDetail]: state => rocketId => {
     return (
       state.rocketDetailsList.findIndex(
         ({ rocket_id }) => rocket_id === rocketId

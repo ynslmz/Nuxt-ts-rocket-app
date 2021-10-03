@@ -1,8 +1,14 @@
+export const mutations = {
+  addRockets: "addRockets",
+  sortRocketList: "sortRocketList",
+  changeSortDirection: "changeSortDirection"
+};
+
 export default {
-  addRockets(state, rockets) {
+  [mutations.addRockets](state, rockets) {
     state.rocketList.push(...rockets);
   },
-  sortRocketList(state) {
+  [mutations.sortRocketList](state) {
     const direction = state.sortDirection == "desc" ? -1 : 1;
     state.rocketList = [
       ...state.rocketList.sort(
@@ -10,7 +16,7 @@ export default {
       )
     ];
   },
-  changeSortDirection(state, sortDirection) {
+  [mutations.changeSortDirection](state, sortDirection) {
     state.sortDirection = sortDirection;
   }
 };

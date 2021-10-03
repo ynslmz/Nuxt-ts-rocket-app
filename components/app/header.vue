@@ -64,15 +64,6 @@
   </header>
 </template>
 
-<script>
-export default {
-  computed: {
-    appName() {
-      return this.$store.state.appName;
-    },
-  },
-};
-</script>
 <style >
 .header {
   margin: 1rem;

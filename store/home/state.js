@@ -1,4 +1,4 @@
-// home page state module
+export const moduleName = "home/";
 
 export default () => ({
   rocketList: [],

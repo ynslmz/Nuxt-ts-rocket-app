@@ -13,6 +13,9 @@
 </template>
 
 <script>
+import { actions } from "../../store/home/actions";
+import { moduleName } from "../../store/home/state";
+
 export default {
   data() {
     return {
@@ -24,7 +27,7 @@ export default {
   },
   methods: {
     onChange(event) {
-      this.$store.dispatch("home/changeSort", event.target.value);
+      this.$store.dispatch(moduleName + actions.changeSort, event.target.value);
     },
   },
 };

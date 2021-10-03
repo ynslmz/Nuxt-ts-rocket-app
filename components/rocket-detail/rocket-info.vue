@@ -21,13 +21,19 @@
 </template>
 
 <script>
+import { actions } from "../../store/rocket/actions";
+import { getters } from "../../store/rocket/getters";
+import { moduleName } from "../../store/rocket/state";
 export default {
   mounted() {
-    this.$store.dispatch("rocket/getRocketInfo", this.$route.params.id);
+    this.$store.dispatch(
+      moduleName + actions.fetchRocketInfo,
+      this.$route.params.id
+    );
   },
   computed: {
     rocketDetail() {
-      return this.$store.getters["rocket/getRocketDetail"](
+      return this.$store.getters[moduleName + getters.getRocketDetail](
         this.$route.params.id
       );
     },
@@ -39,5 +45,4 @@ export default {
 .img-thumb {
   width: 100%;
 }
-
 </style>
