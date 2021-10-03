@@ -6,8 +6,8 @@
       v-model="key"
       @change="onChange($event)"
     >
-      <option value="asc">Asc</option>
-      <option value="desc">Desc</option>
+      <option value="asc">Flight Number (Asc)</option>
+      <option value="desc">Flight Numver (Desc)</option>
     </select>
   </div>
 </template>
@@ -33,7 +33,6 @@ export default {
 };
 </script>
 <style>
-/* sort selector styles */
 .sort-select-container {
   text-align: right;
 }

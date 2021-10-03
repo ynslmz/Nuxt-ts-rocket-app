@@ -8,7 +8,7 @@
         <NuxtLink class="link" to="/">Back</NuxtLink>
       </div>
     </div>
-    <div class="page-container-body">
+    <div class="page-container-body justify-content-center">
       <div
         class="item-container"
         v-for="img in rocketDetail.flickr_images"
@@ -44,5 +44,9 @@ export default {
 <style>
 .img-thumb {
   width: 100%;
+}
+
+.justify-content-center {
+  justify-content: center;
 }
 </style>
