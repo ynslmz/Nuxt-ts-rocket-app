@@ -6,6 +6,7 @@
     </div>
     <div class="page-container-body">
       <home-rocket-list-item
+        :id="'flight_' + rocket.flight_number"
         v-for="rocket in rocketList"
         :key="rocket.flight_number"
         :rocket-info="rocket"

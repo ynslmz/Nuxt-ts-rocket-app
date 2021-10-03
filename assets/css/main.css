@@ -63,7 +63,7 @@ h3 {
     justify-content: space-evenly;
   }
   .item-container {
-    margin: 1rem 0.25rem;
+    margin: 1rem 0.2rem;
     max-width: 46%;
     flex-grow: 1;
   }
