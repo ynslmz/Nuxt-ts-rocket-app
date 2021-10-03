@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <div class="page-container-header">
-      <h3 class="title">Rocket List</h3>
+      <h3 class="title">Latest Launch Events</h3>
       <home-rocket-list-sorting-select />
     </div>
     <div class="page-container-body">
