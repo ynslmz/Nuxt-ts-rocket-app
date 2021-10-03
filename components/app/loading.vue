@@ -26,8 +26,9 @@ export default {
 
 <style>
 .hide {
-  display: none !important;
-  transition: display 1s;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: visibility 0.5s, opacity 0.5s linear;
 }
 
 .backdrop {
