@@ -1,29 +1,39 @@
 <template>
-  <div v-if="!!rocketDetail">
-    <h4 class="rocket-detail-header">
-      {{ rocketDetail.company }} - {{ rocketDetail.rocket_name }}
-    </h4>
-    <div
-      class="img-container"
-      v-for="img in rocketDetail.flickr_images"
-      :key="img"
-    >
-      <img :src="img" class="img-thumb" />
+  <div v-if="!!rocketDetail" class="page-container">
+    <div class="page-container-header">
+      <h3 class="title">
+        {{ rocketDetail.company }} - {{ rocketDetail.rocket_name }}
+      </h3>
+      <div class="sort-select-container">
+        <NuxtLink class="link" to="/">Back</NuxtLink>
+      </div>
     </div>
-    <pre>
-    {{ rocketDetail }}
-    </pre>
+    <div class="page-container-body">
+      <div
+        class="item-container"
+        v-for="img in rocketDetail.flickr_images"
+        :key="img"
+      >
+        <img :src="img" class="img-thumb" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { actions } from "../../store/rocket/actions";
+import { getters } from "../../store/rocket/getters";
+import { moduleName } from "../../store/rocket/state";
 export default {
   mounted() {
-    this.$store.dispatch("rocket/getRocketInfo", this.$route.params.id);
+    this.$store.dispatch(
+      moduleName + actions.fetchRocketInfo,
+      this.$route.params.id
+    );
   },
   computed: {
     rocketDetail() {
-      return this.$store.getters["rocket/getRocketDetail"](
+      return this.$store.getters[moduleName + getters.getRocketDetail](
         this.$route.params.id
       );
     },
@@ -32,33 +42,7 @@ export default {
 </script>
 
 <style>
-.rocket-detail-header {
-  text-align: center;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-}
-.img-container {
-  padding: 0.5rem;
-  overflow: hidden;
-}
 .img-thumb {
   width: 100%;
-  min-width: 100px;
-  max-width: 400px;
-}
-.img-fullscreen {
-  width: 100%;
-}
-.img-fullscreen::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 </style>

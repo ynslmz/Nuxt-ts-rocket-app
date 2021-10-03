@@ -64,21 +64,15 @@
   </header>
 </template>
 
-<script>
-export default {
-  computed: {
-    appName() {
-      return this.$store.state.appName;
-    },
-  },
-};
-</script>
-
-<style>
+<style >
 .header {
+  margin: 1rem;
+  margin-bottom: 0.2rem;
   text-align: center;
 }
-.logo {
-  width: 250px;
+
+.header .logo {
+  height: 2.5rem;
+  max-width: 95%;
 }
 </style>

@@ -1,4 +1,4 @@
-// home page state module
+export const moduleName = "rocket/";
 
 export default () => ({
   rocketDetailsList: []

@@ -1,15 +1,22 @@
 import axios from "axios";
+import { types } from "../index";
+import { mutations } from "./mutations";
+
+export const actions = { fetchRocketInfo: "fetchRocketInfo" };
 
 export default {
-  getRocketInfo(context, rocketId) {
+  [actions.fetchRocketInfo](context, rocketId) {
     if (!context.getters.hasRocketDetail(rocketId)) {
-      context.commit("setLoadingStatus", true, { root: true });
+      context.commit(types.mutations.setLoadingStatus, true, { root: true });
 
       axios
+        // todo take apiUrl from a config
         .get(" https://api.spacexdata.com/v3/rockets/" + rocketId)
         .then(response => {
-          context.commit("addRocketInfo", response.data);
-          context.commit("setLoadingStatus", false, { root: true });
+          context.commit(mutations.addRocketInfo, response.data);
+          context.commit(types.mutations.setLoadingStatus, false, {
+            root: true
+          });
         });
     }
   }

@@ -1,34 +1,47 @@
 <template>
-  <div>
-    <div class="rocket-list-header">
-      <h3>Rocket List</h3>
-      <home-rocket-list-order-select />
+  <div class="page-container">
+    <div class="page-container-header">
+      <h3 class="title">Rocket List</h3>
+      <home-rocket-list-sorting-select />
     </div>
-    <home-rocket-list-item
-      v-for="rocket in rocketList"
-      :key="rocket.flight_number"
-      :rocket-info="rocket"
-    />
+    <div class="page-container-body">
+      <home-rocket-list-item
+        v-for="rocket in rocketList"
+        :key="rocket.flight_number"
+        :rocket-info="rocket"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { actions } from "../../store/home/actions";
+import { getters } from "../../store/home/getters";
+import { moduleName } from "../../store/home/state";
 export default {
   computed: {
     rocketList() {
-      return this.$store.getters["home/getRocketList"];
+      return this.$store.getters[moduleName + getters.getRocketList];
     },
   },
   mounted() {
-    this.$store.dispatch("home/getLatestRocketList");
+    this.$store.dispatch(moduleName + actions.fetchLatestLunchEvents);
   },
 };
 </script>
-
 <style>
-.rocket-list-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.img-container {
+  overflow: hidden;
+  text-align: center;
+  margin-right: 1rem;
+  min-width: 6rem;
+}
+.img-rocket {
+  height: 5rem;
+}
+
+.descriptions {
+  flex-grow: 1;
+  min-width: 250px;
 }
 </style>

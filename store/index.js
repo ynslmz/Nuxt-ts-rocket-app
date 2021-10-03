@@ -1,12 +1,16 @@
 // main state
+export const types = {
+  mutations: {
+    setLoadingStatus: "setLoadingStatus"
+  }
+};
 
 export const state = () => ({
-  loading: false,
-  appName: "SpaceX"
+  loading: false
 });
 
 export const mutations = {
-  setLoadingStatus(state, status) {
+  [types.mutations.setLoadingStatus](state, status) {
     state.loading = status;
   }
 };

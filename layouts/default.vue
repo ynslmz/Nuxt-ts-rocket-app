@@ -1,21 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="main">
     <app-header />
-    <div class="main">
+    <div class="wrapper">
       <Nuxt />
     </div>
-    <app-footer />
+    <app-loading />
   </div>
 </template>
-
-<style>
-.wrapper {
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.main {
-  padding: 0.5rem 0;
-}
-</style>

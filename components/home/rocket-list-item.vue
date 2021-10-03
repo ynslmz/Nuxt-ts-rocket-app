@@ -1,19 +1,25 @@
 <template>
   <NuxtLink
-    class="item-container"
+    class="item-container link"
     :to="'/rocket-details/' + rocketInfo.rocket.rocket_id"
   >
-    <div>{{ rocketInfo.mission_name }}</div>
-    <div>{{ rocketInfo.rocket.rocket_name }}</div>
-    <div>
+    <div class="img-container">
       <img
-        height="48"
+        v-if="!!rocketInfo.links.mission_patch"
+        class="img-rocket"
         :src="rocketInfo.links.mission_patch_small"
         :alt="rocketInfo.rocket.rocket_name"
       />
+      <span v-if="!rocketInfo.links.mission_patch">No Patch</span>
     </div>
-    <div>
-      {{ new Date(rocketInfo.launch_date_unix * 1000).toLocaleString("en-US") }}
+    <div class="descriptions">
+      <p>{{ rocketInfo.mission_name }}</p>
+      <p>{{ rocketInfo.rocket.rocket_name }}</p>
+      <p>
+        {{
+          new Date(rocketInfo.launch_date_unix * 1000).toLocaleString("en-US")
+        }}
+      </p>
     </div>
   </NuxtLink>
 </template>
@@ -23,20 +29,3 @@ export default {
   props: ["rocketInfo"],
 };
 </script>
-
-<style >
-.item-container {
-  display: flex;
-  text-decoration: none;
-  color: #222;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  padding: 0.5rem;
-}
-.item-container:hover {
-  background-color: #ddd;
-}
-.item-container div {
-  width: 100%;
-}
-</style>
