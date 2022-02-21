@@ -12,11 +12,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { actions } from "../../store/home/actions";
 import { moduleName } from "../../store/home/state";
-
-export default {
+import Vue from "vue";
+export default Vue.extend({
   data() {
     return {
       key: "",
@@ -26,11 +26,11 @@ export default {
     this.key = this.$store.state.home.sortDirection;
   },
   methods: {
-    onChange(event) {
+    onChange(event: any) {
       this.$store.dispatch(moduleName + actions.changeSort, event.target.value);
     },
   },
-};
+});
 </script>
 <style>
 .sort-select-container {

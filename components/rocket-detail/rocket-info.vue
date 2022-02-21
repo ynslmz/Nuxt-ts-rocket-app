@@ -20,11 +20,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { actions } from "../../store/rocket/actions";
 import { getters } from "../../store/rocket/getters";
 import { moduleName } from "../../store/rocket/state";
-export default {
+import Vue from "vue";
+export default Vue.extend({
   mounted() {
     this.$store.dispatch(
       moduleName + actions.fetchRocketInfo,
@@ -38,7 +39,7 @@ export default {
       );
     },
   },
-};
+});
 </script>
 
 <style>

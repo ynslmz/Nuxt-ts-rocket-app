@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
   props: ["error"],
   layout: "blog", // you can set a custom layout for the error page
-};
+});
 </script>

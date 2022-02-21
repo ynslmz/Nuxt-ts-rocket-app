@@ -15,11 +15,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { actions } from "../../store/home/actions";
 import { getters } from "../../store/home/getters";
 import { moduleName } from "../../store/home/state";
-export default {
+import Vue from "vue";
+export default Vue.extend({
   computed: {
     rocketList() {
       return this.$store.getters[moduleName + getters.getRocketList];
@@ -28,7 +29,7 @@ export default {
   mounted() {
     this.$store.dispatch(moduleName + actions.fetchLatestLunchEvents);
   },
-};
+});
 </script>
 <style>
 .img-container {

@@ -14,14 +14,16 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  name: "loading",
   computed: {
     loading() {
       return this.$store.state.loading;
     },
   },
-};
+});
 </script>
 
 <style>
