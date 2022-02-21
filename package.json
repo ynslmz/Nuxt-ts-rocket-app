@@ -13,5 +13,8 @@
     "core-js": "^3.15.1",
     "nuxt": "^2.15.8"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0"
+  }
 }
