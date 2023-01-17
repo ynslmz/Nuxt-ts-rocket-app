@@ -9,8 +9,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@capacitor/android": "^4.6.1",
     "@capacitor/cli": "^4.6.1",
     "@capacitor/core": "^4.6.1",
+    "@capacitor/ios": "^4.6.1",
     "axios": "^0.22.0",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.8"
